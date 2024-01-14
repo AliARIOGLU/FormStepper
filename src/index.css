@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[data-theme="dark"] {
+  --background-color: gray;
+}
+
+[data-theme="light"] {
+  --background-color: white;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+@layer components {
+  .input {
+    @apply h-10 rounded px-4 outline-none border border-zinc-400 text-sm focus:border-black w-full;
+  }
+
+  .textarea {
+    @apply rounded p-4 outline-none border border-zinc-400 text-sm focus:border-black resize-none w-full;
+  }
+
+  .button {
+    @apply bg-blue-500 h-10 rounded text-white font-bold w-full disabled:opacity-60 cursor-pointer;
+  }
+
+  .errorMessage {
+    @apply block text-xs text-red-600 mt-1 font-bold;
+  }
+}
